@@ -231,5 +231,5 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_REGION = 'ap-south-1'
 
 
-# if os.getcwd() == '/app':
-#     DEBUG = False
+if os.getcwd() == '/app':
+    DEBUG = False
