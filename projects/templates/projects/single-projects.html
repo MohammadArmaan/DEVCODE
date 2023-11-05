@@ -30,7 +30,7 @@
           {% if project.imageURL%}
           <img class="singleProject__preview" src="{{project.imageURL}}" alt="portfolio thumbnail" />
           {%else%}
-          <img class="singleProject__preview" src="{% static 'images/default.jpg'%}" alt="portfolio thumbnail" />
+          <img class="singleProject__preview" src="https://devcode-bucket.s3.ap-south-1.amazonaws.com/profiles/default.jpg" alt="portfolio thumbnail" />
           {%endif%}
           <a href="{% url 'user-profile' project.owner.id %}" class="singleProject__developer">{{project.owner.name}}</a>
           <h2 class="singleProject__title">{{project.title}}</h2>

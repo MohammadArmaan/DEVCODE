@@ -14,6 +14,9 @@ class ProjectForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProjectForm, self).__init__(*args, **kwargs)
 
+        if not self.instance.featured_image:
+            self.fields['featured_image'].initial = 'profiles/default.jpg'
+            
         for name, field in self.fields.items():
             field.widget.attrs.update({'class':'input', })
 
