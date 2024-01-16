@@ -143,11 +143,11 @@ WSGI_APPLICATION = 'Devsearch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DevCode',
-        'USER':'armaan',
-        'PASSWORD':'armaan7786',
-         'HOST':'database-1.cr0wqpflsnhe.eu-north-1.rds.amazonaws.com',
-         'PORT':'5432',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'PORT': os.environ.get('DATABASE_PORT')
     }
 }
 
@@ -216,14 +216,20 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 
-EMAIL_HOST_USER = "devcode.co.in@gmail.com"
-EMAIL_HOST_PASSWORD = 'ijnmppbfsnptwwav'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = os.environ.get('DEFAULT_FILE_STORAGE')
 
-AWS_ACCESS_KEY_ID = 'AKIAT6N2RYXJD3HDPT67'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'devcode-bucket'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+print("DATABASE_NAME:", os.environ.get('DATABASE_NAME'))
+print("DATABASE_USER:", os.environ.get('DATABASE_USER'))
+print("DATABASE_PASSWORD:", os.environ.get('DATABASE_PASSWORD'))
+print("DATABASE_HOST:", os.environ.get('DATABASE_HOST'))
+print("DATABASE_PORT:", os.environ.get('DATABASE_PORT'))
 
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
