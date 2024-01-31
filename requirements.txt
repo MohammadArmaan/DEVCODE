@@ -22,5 +22,5 @@ s3transfer==0.7.0
 setuptools==68.2.2
 six==1.16.0
 sqlparse==0.4.4
-urllib3==2.0.7
+urllib3==1.26.7
 whitenoise==6.6.0
